@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Personality by Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style media="screen">
+    body{
+      background: pink;
+    }
+    .main{
+    background: rgba(0,0,0,0.1);
+    width: 700px;
+    height: 500px;
+    border: 2px solid #aaa;
+    box-shadow: 0px 20px 30px skyblue;
+    }
+
+h4{
+  color:orange;
+  font-family: 'Acme', sans-serif;
+      text-shadow: 2px 5px 5px black;
+      }
+      h5{
+        color:orange;
+        font-family: 'Acme', sans-serif;
+      }
+  .menu input{
+
+        outline: none;
+        border: 2px solid black;
+        text-align: center;
+        justify-content: center;
+        height: 35px;
+        font-weight:bold;
+        background: pink;
+        width:200px;
+        text-transform: uppercase;
+
+      }
+      .button{
+        height: 35px;
+        width: 200px;
+        font-weight: bold;
+          background: skyblue;
+      }
+      .image{
+        background: ;
+
+      }
+
+@media only screen and (max-width:600px) {
+  .main{
+    height: 500px;
+    width: 300px;
+    border-radius: 5px;
+  }
+
+}
+    </style>
+
+  </head>
+  <body class="bg-dark">
+    <center>
+
+      <h4 class="mt-5 p-1"><b>WHAT DOES YOUR NAME SAY ABOUT YOUR PERSONALITY?</b></h4>
+
+    <div class="main">
+      <div class="menu mt-5">
+        <p class="text-white">#Something Funny</p>
+        <h5>ENTER YOUR NAME</h5>
+        <input type="text" name="name" value="" required id="name">
+     </div>
+
+     <div class="image mt-3">
+       <img src="img1.png" alt="" width="200px" height="200px" class="img">
+     </div>
+     <button type="button" name="button" class="button mt-3">CHECK</button>
+     <div class="icon mt-3">
+       <span style="color:white;font-size:20px">Like </span>
+       <span class="fa fa-heart heart" style="font-size:27px;color:black;"></span>
+       <input type="text" name="" value="0" class="ml-1 num text-white" readonly
+       style="width:35px;height:15px;border:none;outline:none;background:none">
+     </div>
+</div>
+</center>
+
+<footer class="mt-5 text-white p-1" style="background:black;">
+  <h6 class="p-1">  Created By : Akshay Patil
+</h6>
+</footer>
+  
+
+  <script>
+  $(document).ready(function(){
+    $('.button').click(function(){
+      const a = $('#name').val();
+      alert('Welcome' +" "+a);
+      $('.img').attr('src',`https://joeschmoe.io/api/v1/${a}`);
+    });
+  });
+
+$(document).dblclick(function(){
+  $('.heart').css('color','red');
+  var b = Number($(".num").val()) + 1;
+  $('.num').attr('value',b);
+   alert('Thank you!');
+
+});
+  </script>
+
+
+</body>
+</html>
